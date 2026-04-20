@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>qttt — play in browser</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css">
+</head>
+<body>
+  <header>
+    <h1>qttt</h1>
+    <p class="sub">q-learning tic-tac-toe · running in your browser via <a href="https://pyodide.org/" target="_blank" rel="noopener">pyodide</a></p>
+    <p class="sub">
+      <a href="https://github.com/heltonmaia/qttt" target="_blank" rel="noopener">source</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/heltonmaia/qttt/blob/main/LEARN.md" target="_blank" rel="noopener">how it works</a>
+    </p>
+  </header>
+  <main>
+    <div id="boot">booting…</div>
+    <div id="term"></div>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

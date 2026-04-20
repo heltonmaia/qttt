@@ -7,7 +7,10 @@ or when the NO_COLOR environment variable is set.
 import os
 import sys
 
-_ENABLED = sys.stdout.isatty() and os.environ.get("NO_COLOR") is None
+_ENABLED = (
+    os.environ.get("FORCE_COLOR") == "1"
+    or (sys.stdout.isatty() and os.environ.get("NO_COLOR") is None)
+)
 
 
 def _c(code: str) -> str:
