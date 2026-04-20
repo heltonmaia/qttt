@@ -122,6 +122,8 @@ CHROME_H = 28
 
 
 def _escape(s):
+    # Replace spaces with NBSP so whitespace never collapses, then XML-escape.
+    s = s.replace(" ", "\u00a0")
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
@@ -134,7 +136,8 @@ def to_svg(lines, title="qttt"):
     out.append(
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
-        f'font-family="ui-monospace, Menlo, Consolas, monospace" font-size="14">'
+        f'font-family="ui-monospace, Menlo, Consolas, monospace" font-size="14" '
+        f'xml:space="preserve">'
     )
     out.append(f'  <rect width="{width}" height="{height}" rx="10" fill="{BG}"/>')
     # window chrome
@@ -150,10 +153,19 @@ def to_svg(lines, title="qttt"):
 
     y = CHROME_H + PAD + LINE_H - 6
     for ln in lines:
-        out.append(f'  <text x="{PAD}" y="{y}" xml:space="preserve">')
+        out.append(f'  <text y="{y}" xml:space="preserve">')
+        col = 0
         for fg, bold, s in ln:
             weight = ' font-weight="700"' if bold else ""
-            out.append(f'    <tspan fill="{fg}"{weight}>{_escape(s)}</tspan>')
+            x = PAD + col * CHAR_W
+            # Anchor each run at an absolute x so misaligned glyph widths
+            # (bold vs regular, box-drawing chars) cannot drift the grid.
+            out.append(
+                f'    <tspan x="{x}" fill="{fg}"{weight}'
+                f' textLength="{len(s) * CHAR_W}" lengthAdjust="spacingAndGlyphs"'
+                f'>{_escape(s)}</tspan>'
+            )
+            col += len(s)
         out.append("  </text>")
         y += LINE_H
     out.append("</svg>")
