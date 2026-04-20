@@ -1,6 +1,8 @@
-# 🎮 Jogo da Velha com IA (Q-Learning)
+# 🎮 qttt — Jogo da Velha com Q-Learning
 
 Um projeto de **Jogo da Velha** em Python com uma **Inteligência Artificial** baseada em Q-Learning. A IA é capaz de aprender jogando contra si mesma e enfrentar humanos!
+
+> **Sobre o nome:** `qttt` = **Q** (de *Q-learning*) + **ttt** (de *tic-tac-toe*). Curto, pronunciável ("Q-triple-T") e fiel ao que o projeto faz: um agente de Q-learning tabular jogando a velha.
 
 ---
 
