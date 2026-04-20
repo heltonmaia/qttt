@@ -6,105 +6,505 @@
   <circle cx="34" cy="14" r="5" fill="#febc2e"/>
   <circle cx="52" cy="14" r="5" fill="#28c840"/>
   <text x="288.0" y="18" fill="#8a8a8a" font-size="12" text-anchor="middle">qttt — main menu</text>
-  <text y="60" xml:space="preserve">
+  <text y="60" text-anchor="middle" xml:space="preserve">
   </text>
-  <text y="80" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="18" lengthAdjust="spacingAndGlyphs">  </tspan>
-    <tspan x="36" fill="#5cff5c" textLength="324" lengthAdjust="spacingAndGlyphs"> ██████╗ ████████╗████████╗████████╗</tspan>
+  <text y="80" text-anchor="middle" xml:space="preserve">
+    <tspan x="49" fill="#5cff5c">█</tspan>
+    <tspan x="58" fill="#5cff5c">█</tspan>
+    <tspan x="67" fill="#5cff5c">█</tspan>
+    <tspan x="76" fill="#5cff5c">█</tspan>
+    <tspan x="85" fill="#5cff5c">█</tspan>
+    <tspan x="94" fill="#5cff5c">█</tspan>
+    <tspan x="103" fill="#5cff5c">╗</tspan>
+    <tspan x="121" fill="#5cff5c">█</tspan>
+    <tspan x="130" fill="#5cff5c">█</tspan>
+    <tspan x="139" fill="#5cff5c">█</tspan>
+    <tspan x="148" fill="#5cff5c">█</tspan>
+    <tspan x="157" fill="#5cff5c">█</tspan>
+    <tspan x="166" fill="#5cff5c">█</tspan>
+    <tspan x="175" fill="#5cff5c">█</tspan>
+    <tspan x="184" fill="#5cff5c">█</tspan>
+    <tspan x="193" fill="#5cff5c">╗</tspan>
+    <tspan x="202" fill="#5cff5c">█</tspan>
+    <tspan x="211" fill="#5cff5c">█</tspan>
+    <tspan x="220" fill="#5cff5c">█</tspan>
+    <tspan x="229" fill="#5cff5c">█</tspan>
+    <tspan x="238" fill="#5cff5c">█</tspan>
+    <tspan x="247" fill="#5cff5c">█</tspan>
+    <tspan x="256" fill="#5cff5c">█</tspan>
+    <tspan x="265" fill="#5cff5c">█</tspan>
+    <tspan x="274" fill="#5cff5c">╗</tspan>
+    <tspan x="283" fill="#5cff5c">█</tspan>
+    <tspan x="292" fill="#5cff5c">█</tspan>
+    <tspan x="301" fill="#5cff5c">█</tspan>
+    <tspan x="310" fill="#5cff5c">█</tspan>
+    <tspan x="319" fill="#5cff5c">█</tspan>
+    <tspan x="328" fill="#5cff5c">█</tspan>
+    <tspan x="337" fill="#5cff5c">█</tspan>
+    <tspan x="346" fill="#5cff5c">█</tspan>
+    <tspan x="355" fill="#5cff5c">╗</tspan>
   </text>
-  <text y="100" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="18" lengthAdjust="spacingAndGlyphs">  </tspan>
-    <tspan x="36" fill="#5cff5c" textLength="324" lengthAdjust="spacingAndGlyphs">██╔═══██╗╚══██╔══╝╚══██╔══╝╚══██╔══╝</tspan>
+  <text y="100" text-anchor="middle" xml:space="preserve">
+    <tspan x="40" fill="#5cff5c">█</tspan>
+    <tspan x="49" fill="#5cff5c">█</tspan>
+    <tspan x="58" fill="#5cff5c">╔</tspan>
+    <tspan x="67" fill="#5cff5c">═</tspan>
+    <tspan x="76" fill="#5cff5c">═</tspan>
+    <tspan x="85" fill="#5cff5c">═</tspan>
+    <tspan x="94" fill="#5cff5c">█</tspan>
+    <tspan x="103" fill="#5cff5c">█</tspan>
+    <tspan x="112" fill="#5cff5c">╗</tspan>
+    <tspan x="121" fill="#5cff5c">╚</tspan>
+    <tspan x="130" fill="#5cff5c">═</tspan>
+    <tspan x="139" fill="#5cff5c">═</tspan>
+    <tspan x="148" fill="#5cff5c">█</tspan>
+    <tspan x="157" fill="#5cff5c">█</tspan>
+    <tspan x="166" fill="#5cff5c">╔</tspan>
+    <tspan x="175" fill="#5cff5c">═</tspan>
+    <tspan x="184" fill="#5cff5c">═</tspan>
+    <tspan x="193" fill="#5cff5c">╝</tspan>
+    <tspan x="202" fill="#5cff5c">╚</tspan>
+    <tspan x="211" fill="#5cff5c">═</tspan>
+    <tspan x="220" fill="#5cff5c">═</tspan>
+    <tspan x="229" fill="#5cff5c">█</tspan>
+    <tspan x="238" fill="#5cff5c">█</tspan>
+    <tspan x="247" fill="#5cff5c">╔</tspan>
+    <tspan x="256" fill="#5cff5c">═</tspan>
+    <tspan x="265" fill="#5cff5c">═</tspan>
+    <tspan x="274" fill="#5cff5c">╝</tspan>
+    <tspan x="283" fill="#5cff5c">╚</tspan>
+    <tspan x="292" fill="#5cff5c">═</tspan>
+    <tspan x="301" fill="#5cff5c">═</tspan>
+    <tspan x="310" fill="#5cff5c">█</tspan>
+    <tspan x="319" fill="#5cff5c">█</tspan>
+    <tspan x="328" fill="#5cff5c">╔</tspan>
+    <tspan x="337" fill="#5cff5c">═</tspan>
+    <tspan x="346" fill="#5cff5c">═</tspan>
+    <tspan x="355" fill="#5cff5c">╝</tspan>
   </text>
-  <text y="120" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="18" lengthAdjust="spacingAndGlyphs">  </tspan>
-    <tspan x="36" fill="#5cff5c" textLength="324" lengthAdjust="spacingAndGlyphs">██║   ██║   ██║      ██║      ██║   </tspan>
+  <text y="120" text-anchor="middle" xml:space="preserve">
+    <tspan x="40" fill="#5cff5c">█</tspan>
+    <tspan x="49" fill="#5cff5c">█</tspan>
+    <tspan x="58" fill="#5cff5c">║</tspan>
+    <tspan x="94" fill="#5cff5c">█</tspan>
+    <tspan x="103" fill="#5cff5c">█</tspan>
+    <tspan x="112" fill="#5cff5c">║</tspan>
+    <tspan x="148" fill="#5cff5c">█</tspan>
+    <tspan x="157" fill="#5cff5c">█</tspan>
+    <tspan x="166" fill="#5cff5c">║</tspan>
+    <tspan x="229" fill="#5cff5c">█</tspan>
+    <tspan x="238" fill="#5cff5c">█</tspan>
+    <tspan x="247" fill="#5cff5c">║</tspan>
+    <tspan x="310" fill="#5cff5c">█</tspan>
+    <tspan x="319" fill="#5cff5c">█</tspan>
+    <tspan x="328" fill="#5cff5c">║</tspan>
   </text>
-  <text y="140" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="18" lengthAdjust="spacingAndGlyphs">  </tspan>
-    <tspan x="36" fill="#5cff5c" textLength="324" lengthAdjust="spacingAndGlyphs">██║▄▄ ██║   ██║      ██║      ██║   </tspan>
+  <text y="140" text-anchor="middle" xml:space="preserve">
+    <tspan x="40" fill="#5cff5c">█</tspan>
+    <tspan x="49" fill="#5cff5c">█</tspan>
+    <tspan x="58" fill="#5cff5c">║</tspan>
+    <tspan x="67" fill="#5cff5c">▄</tspan>
+    <tspan x="76" fill="#5cff5c">▄</tspan>
+    <tspan x="94" fill="#5cff5c">█</tspan>
+    <tspan x="103" fill="#5cff5c">█</tspan>
+    <tspan x="112" fill="#5cff5c">║</tspan>
+    <tspan x="148" fill="#5cff5c">█</tspan>
+    <tspan x="157" fill="#5cff5c">█</tspan>
+    <tspan x="166" fill="#5cff5c">║</tspan>
+    <tspan x="229" fill="#5cff5c">█</tspan>
+    <tspan x="238" fill="#5cff5c">█</tspan>
+    <tspan x="247" fill="#5cff5c">║</tspan>
+    <tspan x="310" fill="#5cff5c">█</tspan>
+    <tspan x="319" fill="#5cff5c">█</tspan>
+    <tspan x="328" fill="#5cff5c">║</tspan>
   </text>
-  <text y="160" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="18" lengthAdjust="spacingAndGlyphs">  </tspan>
-    <tspan x="36" fill="#5cff5c" textLength="324" lengthAdjust="spacingAndGlyphs">╚██████╔╝   ██║      ██║      ██║   </tspan>
+  <text y="160" text-anchor="middle" xml:space="preserve">
+    <tspan x="40" fill="#5cff5c">╚</tspan>
+    <tspan x="49" fill="#5cff5c">█</tspan>
+    <tspan x="58" fill="#5cff5c">█</tspan>
+    <tspan x="67" fill="#5cff5c">█</tspan>
+    <tspan x="76" fill="#5cff5c">█</tspan>
+    <tspan x="85" fill="#5cff5c">█</tspan>
+    <tspan x="94" fill="#5cff5c">█</tspan>
+    <tspan x="103" fill="#5cff5c">╔</tspan>
+    <tspan x="112" fill="#5cff5c">╝</tspan>
+    <tspan x="148" fill="#5cff5c">█</tspan>
+    <tspan x="157" fill="#5cff5c">█</tspan>
+    <tspan x="166" fill="#5cff5c">║</tspan>
+    <tspan x="229" fill="#5cff5c">█</tspan>
+    <tspan x="238" fill="#5cff5c">█</tspan>
+    <tspan x="247" fill="#5cff5c">║</tspan>
+    <tspan x="310" fill="#5cff5c">█</tspan>
+    <tspan x="319" fill="#5cff5c">█</tspan>
+    <tspan x="328" fill="#5cff5c">║</tspan>
   </text>
-  <text y="180" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="18" lengthAdjust="spacingAndGlyphs">  </tspan>
-    <tspan x="36" fill="#5cff5c" textLength="324" lengthAdjust="spacingAndGlyphs"> ╚══▀▀═╝    ╚═╝      ╚═╝      ╚═╝   </tspan>
+  <text y="180" text-anchor="middle" xml:space="preserve">
+    <tspan x="49" fill="#5cff5c">╚</tspan>
+    <tspan x="58" fill="#5cff5c">═</tspan>
+    <tspan x="67" fill="#5cff5c">═</tspan>
+    <tspan x="76" fill="#5cff5c">▀</tspan>
+    <tspan x="85" fill="#5cff5c">▀</tspan>
+    <tspan x="94" fill="#5cff5c">═</tspan>
+    <tspan x="103" fill="#5cff5c">╝</tspan>
+    <tspan x="148" fill="#5cff5c">╚</tspan>
+    <tspan x="157" fill="#5cff5c">═</tspan>
+    <tspan x="166" fill="#5cff5c">╝</tspan>
+    <tspan x="229" fill="#5cff5c">╚</tspan>
+    <tspan x="238" fill="#5cff5c">═</tspan>
+    <tspan x="247" fill="#5cff5c">╝</tspan>
+    <tspan x="310" fill="#5cff5c">╚</tspan>
+    <tspan x="319" fill="#5cff5c">═</tspan>
+    <tspan x="328" fill="#5cff5c">╝</tspan>
   </text>
-  <text y="200" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="18" lengthAdjust="spacingAndGlyphs">  </tspan>
-    <tspan x="36" fill="#8a8a8a" textLength="315" lengthAdjust="spacingAndGlyphs">q-learning · tabular RL · self-play</tspan>
+  <text y="200" text-anchor="middle" xml:space="preserve">
+    <tspan x="40" fill="#8a8a8a">q</tspan>
+    <tspan x="49" fill="#8a8a8a">-</tspan>
+    <tspan x="58" fill="#8a8a8a">l</tspan>
+    <tspan x="67" fill="#8a8a8a">e</tspan>
+    <tspan x="76" fill="#8a8a8a">a</tspan>
+    <tspan x="85" fill="#8a8a8a">r</tspan>
+    <tspan x="94" fill="#8a8a8a">n</tspan>
+    <tspan x="103" fill="#8a8a8a">i</tspan>
+    <tspan x="112" fill="#8a8a8a">n</tspan>
+    <tspan x="121" fill="#8a8a8a">g</tspan>
+    <tspan x="139" fill="#8a8a8a">·</tspan>
+    <tspan x="157" fill="#8a8a8a">t</tspan>
+    <tspan x="166" fill="#8a8a8a">a</tspan>
+    <tspan x="175" fill="#8a8a8a">b</tspan>
+    <tspan x="184" fill="#8a8a8a">u</tspan>
+    <tspan x="193" fill="#8a8a8a">l</tspan>
+    <tspan x="202" fill="#8a8a8a">a</tspan>
+    <tspan x="211" fill="#8a8a8a">r</tspan>
+    <tspan x="229" fill="#8a8a8a">R</tspan>
+    <tspan x="238" fill="#8a8a8a">L</tspan>
+    <tspan x="256" fill="#8a8a8a">·</tspan>
+    <tspan x="274" fill="#8a8a8a">s</tspan>
+    <tspan x="283" fill="#8a8a8a">e</tspan>
+    <tspan x="292" fill="#8a8a8a">l</tspan>
+    <tspan x="301" fill="#8a8a8a">f</tspan>
+    <tspan x="310" fill="#8a8a8a">-</tspan>
+    <tspan x="319" fill="#8a8a8a">p</tspan>
+    <tspan x="328" fill="#8a8a8a">l</tspan>
+    <tspan x="337" fill="#8a8a8a">a</tspan>
+    <tspan x="346" fill="#8a8a8a">y</tspan>
   </text>
-  <text y="220" xml:space="preserve">
+  <text y="220" text-anchor="middle" xml:space="preserve">
   </text>
-  <text y="240" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="18" lengthAdjust="spacingAndGlyphs">  </tspan>
-    <tspan x="36" fill="#5ce7ff" textLength="90" lengthAdjust="spacingAndGlyphs">[ system ]</tspan>
-    <tspan x="126" fill="#c6c6c6" textLength="243" lengthAdjust="spacingAndGlyphs"> tabular q-learning agent  </tspan>
-    <tspan x="369" fill="#8a8a8a" textLength="18" lengthAdjust="spacingAndGlyphs">::</tspan>
-    <tspan x="387" fill="#c6c6c6" textLength="45" lengthAdjust="spacingAndGlyphs"> v1.0</tspan>
+  <text y="240" text-anchor="middle" xml:space="preserve">
+    <tspan x="40" fill="#5ce7ff">[</tspan>
+    <tspan x="58" fill="#5ce7ff">s</tspan>
+    <tspan x="67" fill="#5ce7ff">y</tspan>
+    <tspan x="76" fill="#5ce7ff">s</tspan>
+    <tspan x="85" fill="#5ce7ff">t</tspan>
+    <tspan x="94" fill="#5ce7ff">e</tspan>
+    <tspan x="103" fill="#5ce7ff">m</tspan>
+    <tspan x="121" fill="#5ce7ff">]</tspan>
+    <tspan x="139" fill="#c6c6c6">t</tspan>
+    <tspan x="148" fill="#c6c6c6">a</tspan>
+    <tspan x="157" fill="#c6c6c6">b</tspan>
+    <tspan x="166" fill="#c6c6c6">u</tspan>
+    <tspan x="175" fill="#c6c6c6">l</tspan>
+    <tspan x="184" fill="#c6c6c6">a</tspan>
+    <tspan x="193" fill="#c6c6c6">r</tspan>
+    <tspan x="211" fill="#c6c6c6">q</tspan>
+    <tspan x="220" fill="#c6c6c6">-</tspan>
+    <tspan x="229" fill="#c6c6c6">l</tspan>
+    <tspan x="238" fill="#c6c6c6">e</tspan>
+    <tspan x="247" fill="#c6c6c6">a</tspan>
+    <tspan x="256" fill="#c6c6c6">r</tspan>
+    <tspan x="265" fill="#c6c6c6">n</tspan>
+    <tspan x="274" fill="#c6c6c6">i</tspan>
+    <tspan x="283" fill="#c6c6c6">n</tspan>
+    <tspan x="292" fill="#c6c6c6">g</tspan>
+    <tspan x="310" fill="#c6c6c6">a</tspan>
+    <tspan x="319" fill="#c6c6c6">g</tspan>
+    <tspan x="328" fill="#c6c6c6">e</tspan>
+    <tspan x="337" fill="#c6c6c6">n</tspan>
+    <tspan x="346" fill="#c6c6c6">t</tspan>
+    <tspan x="373" fill="#8a8a8a">:</tspan>
+    <tspan x="382" fill="#8a8a8a">:</tspan>
+    <tspan x="400" fill="#c6c6c6">v</tspan>
+    <tspan x="409" fill="#c6c6c6">1</tspan>
+    <tspan x="418" fill="#c6c6c6">.</tspan>
+    <tspan x="427" fill="#c6c6c6">0</tspan>
   </text>
-  <text y="260" xml:space="preserve">
-    <tspan x="18" fill="#8a8a8a" textLength="540" lengthAdjust="spacingAndGlyphs">  ──────────────────────────────────────────────────────────</tspan>
+  <text y="260" text-anchor="middle" xml:space="preserve">
+    <tspan x="40" fill="#8a8a8a">─</tspan>
+    <tspan x="49" fill="#8a8a8a">─</tspan>
+    <tspan x="58" fill="#8a8a8a">─</tspan>
+    <tspan x="67" fill="#8a8a8a">─</tspan>
+    <tspan x="76" fill="#8a8a8a">─</tspan>
+    <tspan x="85" fill="#8a8a8a">─</tspan>
+    <tspan x="94" fill="#8a8a8a">─</tspan>
+    <tspan x="103" fill="#8a8a8a">─</tspan>
+    <tspan x="112" fill="#8a8a8a">─</tspan>
+    <tspan x="121" fill="#8a8a8a">─</tspan>
+    <tspan x="130" fill="#8a8a8a">─</tspan>
+    <tspan x="139" fill="#8a8a8a">─</tspan>
+    <tspan x="148" fill="#8a8a8a">─</tspan>
+    <tspan x="157" fill="#8a8a8a">─</tspan>
+    <tspan x="166" fill="#8a8a8a">─</tspan>
+    <tspan x="175" fill="#8a8a8a">─</tspan>
+    <tspan x="184" fill="#8a8a8a">─</tspan>
+    <tspan x="193" fill="#8a8a8a">─</tspan>
+    <tspan x="202" fill="#8a8a8a">─</tspan>
+    <tspan x="211" fill="#8a8a8a">─</tspan>
+    <tspan x="220" fill="#8a8a8a">─</tspan>
+    <tspan x="229" fill="#8a8a8a">─</tspan>
+    <tspan x="238" fill="#8a8a8a">─</tspan>
+    <tspan x="247" fill="#8a8a8a">─</tspan>
+    <tspan x="256" fill="#8a8a8a">─</tspan>
+    <tspan x="265" fill="#8a8a8a">─</tspan>
+    <tspan x="274" fill="#8a8a8a">─</tspan>
+    <tspan x="283" fill="#8a8a8a">─</tspan>
+    <tspan x="292" fill="#8a8a8a">─</tspan>
+    <tspan x="301" fill="#8a8a8a">─</tspan>
+    <tspan x="310" fill="#8a8a8a">─</tspan>
+    <tspan x="319" fill="#8a8a8a">─</tspan>
+    <tspan x="328" fill="#8a8a8a">─</tspan>
+    <tspan x="337" fill="#8a8a8a">─</tspan>
+    <tspan x="346" fill="#8a8a8a">─</tspan>
+    <tspan x="355" fill="#8a8a8a">─</tspan>
+    <tspan x="364" fill="#8a8a8a">─</tspan>
+    <tspan x="373" fill="#8a8a8a">─</tspan>
+    <tspan x="382" fill="#8a8a8a">─</tspan>
+    <tspan x="391" fill="#8a8a8a">─</tspan>
+    <tspan x="400" fill="#8a8a8a">─</tspan>
+    <tspan x="409" fill="#8a8a8a">─</tspan>
+    <tspan x="418" fill="#8a8a8a">─</tspan>
+    <tspan x="427" fill="#8a8a8a">─</tspan>
+    <tspan x="436" fill="#8a8a8a">─</tspan>
+    <tspan x="445" fill="#8a8a8a">─</tspan>
+    <tspan x="454" fill="#8a8a8a">─</tspan>
+    <tspan x="463" fill="#8a8a8a">─</tspan>
+    <tspan x="472" fill="#8a8a8a">─</tspan>
+    <tspan x="481" fill="#8a8a8a">─</tspan>
+    <tspan x="490" fill="#8a8a8a">─</tspan>
+    <tspan x="499" fill="#8a8a8a">─</tspan>
+    <tspan x="508" fill="#8a8a8a">─</tspan>
+    <tspan x="517" fill="#8a8a8a">─</tspan>
+    <tspan x="526" fill="#8a8a8a">─</tspan>
+    <tspan x="535" fill="#8a8a8a">─</tspan>
+    <tspan x="544" fill="#8a8a8a">─</tspan>
+    <tspan x="553" fill="#8a8a8a">─</tspan>
   </text>
-  <text y="280" xml:space="preserve">
+  <text y="280" text-anchor="middle" xml:space="preserve">
   </text>
-  <text y="300" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="18" lengthAdjust="spacingAndGlyphs">  </tspan>
-    <tspan x="36" fill="#ffee55" textLength="81" lengthAdjust="spacingAndGlyphs">[ modes ]</tspan>
-    <tspan x="117" fill="#c6c6c6" textLength="162" lengthAdjust="spacingAndGlyphs"> select operation:</tspan>
+  <text y="300" text-anchor="middle" xml:space="preserve">
+    <tspan x="40" fill="#ffee55">[</tspan>
+    <tspan x="58" fill="#ffee55">m</tspan>
+    <tspan x="67" fill="#ffee55">o</tspan>
+    <tspan x="76" fill="#ffee55">d</tspan>
+    <tspan x="85" fill="#ffee55">e</tspan>
+    <tspan x="94" fill="#ffee55">s</tspan>
+    <tspan x="112" fill="#ffee55">]</tspan>
+    <tspan x="130" fill="#c6c6c6">s</tspan>
+    <tspan x="139" fill="#c6c6c6">e</tspan>
+    <tspan x="148" fill="#c6c6c6">l</tspan>
+    <tspan x="157" fill="#c6c6c6">e</tspan>
+    <tspan x="166" fill="#c6c6c6">c</tspan>
+    <tspan x="175" fill="#c6c6c6">t</tspan>
+    <tspan x="193" fill="#c6c6c6">o</tspan>
+    <tspan x="202" fill="#c6c6c6">p</tspan>
+    <tspan x="211" fill="#c6c6c6">e</tspan>
+    <tspan x="220" fill="#c6c6c6">r</tspan>
+    <tspan x="229" fill="#c6c6c6">a</tspan>
+    <tspan x="238" fill="#c6c6c6">t</tspan>
+    <tspan x="247" fill="#c6c6c6">i</tspan>
+    <tspan x="256" fill="#c6c6c6">o</tspan>
+    <tspan x="265" fill="#c6c6c6">n</tspan>
+    <tspan x="274" fill="#c6c6c6">:</tspan>
   </text>
-  <text y="320" xml:space="preserve">
+  <text y="320" text-anchor="middle" xml:space="preserve">
   </text>
-  <text y="340" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="36" lengthAdjust="spacingAndGlyphs">    </tspan>
-    <tspan x="54" fill="#5cff5c" textLength="27" lengthAdjust="spacingAndGlyphs">[1]</tspan>
-    <tspan x="81" fill="#c6c6c6" textLength="9" lengthAdjust="spacingAndGlyphs"> </tspan>
-    <tspan x="90" fill="#8a8a8a" textLength="9" lengthAdjust="spacingAndGlyphs">&gt;</tspan>
-    <tspan x="99" fill="#c6c6c6" textLength="135" lengthAdjust="spacingAndGlyphs"> human vs human</tspan>
+  <text y="340" text-anchor="middle" xml:space="preserve">
+    <tspan x="58" fill="#5cff5c">[</tspan>
+    <tspan x="67" fill="#5cff5c">1</tspan>
+    <tspan x="76" fill="#5cff5c">]</tspan>
+    <tspan x="94" fill="#8a8a8a">&gt;</tspan>
+    <tspan x="112" fill="#c6c6c6">h</tspan>
+    <tspan x="121" fill="#c6c6c6">u</tspan>
+    <tspan x="130" fill="#c6c6c6">m</tspan>
+    <tspan x="139" fill="#c6c6c6">a</tspan>
+    <tspan x="148" fill="#c6c6c6">n</tspan>
+    <tspan x="166" fill="#c6c6c6">v</tspan>
+    <tspan x="175" fill="#c6c6c6">s</tspan>
+    <tspan x="193" fill="#c6c6c6">h</tspan>
+    <tspan x="202" fill="#c6c6c6">u</tspan>
+    <tspan x="211" fill="#c6c6c6">m</tspan>
+    <tspan x="220" fill="#c6c6c6">a</tspan>
+    <tspan x="229" fill="#c6c6c6">n</tspan>
   </text>
-  <text y="360" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="36" lengthAdjust="spacingAndGlyphs">    </tspan>
-    <tspan x="54" fill="#5cff5c" textLength="27" lengthAdjust="spacingAndGlyphs">[2]</tspan>
-    <tspan x="81" fill="#c6c6c6" textLength="9" lengthAdjust="spacingAndGlyphs"> </tspan>
-    <tspan x="90" fill="#8a8a8a" textLength="9" lengthAdjust="spacingAndGlyphs">&gt;</tspan>
-    <tspan x="99" fill="#c6c6c6" textLength="180" lengthAdjust="spacingAndGlyphs"> human vs random bot</tspan>
+  <text y="360" text-anchor="middle" xml:space="preserve">
+    <tspan x="58" fill="#5cff5c">[</tspan>
+    <tspan x="67" fill="#5cff5c">2</tspan>
+    <tspan x="76" fill="#5cff5c">]</tspan>
+    <tspan x="94" fill="#8a8a8a">&gt;</tspan>
+    <tspan x="112" fill="#c6c6c6">h</tspan>
+    <tspan x="121" fill="#c6c6c6">u</tspan>
+    <tspan x="130" fill="#c6c6c6">m</tspan>
+    <tspan x="139" fill="#c6c6c6">a</tspan>
+    <tspan x="148" fill="#c6c6c6">n</tspan>
+    <tspan x="166" fill="#c6c6c6">v</tspan>
+    <tspan x="175" fill="#c6c6c6">s</tspan>
+    <tspan x="193" fill="#c6c6c6">r</tspan>
+    <tspan x="202" fill="#c6c6c6">a</tspan>
+    <tspan x="211" fill="#c6c6c6">n</tspan>
+    <tspan x="220" fill="#c6c6c6">d</tspan>
+    <tspan x="229" fill="#c6c6c6">o</tspan>
+    <tspan x="238" fill="#c6c6c6">m</tspan>
+    <tspan x="256" fill="#c6c6c6">b</tspan>
+    <tspan x="265" fill="#c6c6c6">o</tspan>
+    <tspan x="274" fill="#c6c6c6">t</tspan>
   </text>
-  <text y="380" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="36" lengthAdjust="spacingAndGlyphs">    </tspan>
-    <tspan x="54" fill="#5cff5c" textLength="27" lengthAdjust="spacingAndGlyphs">[3]</tspan>
-    <tspan x="81" fill="#c6c6c6" textLength="9" lengthAdjust="spacingAndGlyphs"> </tspan>
-    <tspan x="90" fill="#8a8a8a" textLength="9" lengthAdjust="spacingAndGlyphs">&gt;</tspan>
-    <tspan x="99" fill="#c6c6c6" textLength="180" lengthAdjust="spacingAndGlyphs"> human vs trained AI</tspan>
+  <text y="380" text-anchor="middle" xml:space="preserve">
+    <tspan x="58" fill="#5cff5c">[</tspan>
+    <tspan x="67" fill="#5cff5c">3</tspan>
+    <tspan x="76" fill="#5cff5c">]</tspan>
+    <tspan x="94" fill="#8a8a8a">&gt;</tspan>
+    <tspan x="112" fill="#c6c6c6">h</tspan>
+    <tspan x="121" fill="#c6c6c6">u</tspan>
+    <tspan x="130" fill="#c6c6c6">m</tspan>
+    <tspan x="139" fill="#c6c6c6">a</tspan>
+    <tspan x="148" fill="#c6c6c6">n</tspan>
+    <tspan x="166" fill="#c6c6c6">v</tspan>
+    <tspan x="175" fill="#c6c6c6">s</tspan>
+    <tspan x="193" fill="#c6c6c6">t</tspan>
+    <tspan x="202" fill="#c6c6c6">r</tspan>
+    <tspan x="211" fill="#c6c6c6">a</tspan>
+    <tspan x="220" fill="#c6c6c6">i</tspan>
+    <tspan x="229" fill="#c6c6c6">n</tspan>
+    <tspan x="238" fill="#c6c6c6">e</tspan>
+    <tspan x="247" fill="#c6c6c6">d</tspan>
+    <tspan x="265" fill="#c6c6c6">A</tspan>
+    <tspan x="274" fill="#c6c6c6">I</tspan>
   </text>
-  <text y="400" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="36" lengthAdjust="spacingAndGlyphs">    </tspan>
-    <tspan x="54" fill="#5cff5c" textLength="27" lengthAdjust="spacingAndGlyphs">[4]</tspan>
-    <tspan x="81" fill="#c6c6c6" textLength="9" lengthAdjust="spacingAndGlyphs"> </tspan>
-    <tspan x="90" fill="#8a8a8a" textLength="9" lengthAdjust="spacingAndGlyphs">&gt;</tspan>
-    <tspan x="99" fill="#c6c6c6" textLength="99" lengthAdjust="spacingAndGlyphs"> spectate  </tspan>
-    <tspan x="198" fill="#8a8a8a" textLength="18" lengthAdjust="spacingAndGlyphs">::</tspan>
-    <tspan x="216" fill="#c6c6c6" textLength="153" lengthAdjust="spacingAndGlyphs"> random bot vs AI</tspan>
+  <text y="400" text-anchor="middle" xml:space="preserve">
+    <tspan x="58" fill="#5cff5c">[</tspan>
+    <tspan x="67" fill="#5cff5c">4</tspan>
+    <tspan x="76" fill="#5cff5c">]</tspan>
+    <tspan x="94" fill="#8a8a8a">&gt;</tspan>
+    <tspan x="112" fill="#c6c6c6">s</tspan>
+    <tspan x="121" fill="#c6c6c6">p</tspan>
+    <tspan x="130" fill="#c6c6c6">e</tspan>
+    <tspan x="139" fill="#c6c6c6">c</tspan>
+    <tspan x="148" fill="#c6c6c6">t</tspan>
+    <tspan x="157" fill="#c6c6c6">a</tspan>
+    <tspan x="166" fill="#c6c6c6">t</tspan>
+    <tspan x="175" fill="#c6c6c6">e</tspan>
+    <tspan x="202" fill="#8a8a8a">:</tspan>
+    <tspan x="211" fill="#8a8a8a">:</tspan>
+    <tspan x="229" fill="#c6c6c6">r</tspan>
+    <tspan x="238" fill="#c6c6c6">a</tspan>
+    <tspan x="247" fill="#c6c6c6">n</tspan>
+    <tspan x="256" fill="#c6c6c6">d</tspan>
+    <tspan x="265" fill="#c6c6c6">o</tspan>
+    <tspan x="274" fill="#c6c6c6">m</tspan>
+    <tspan x="292" fill="#c6c6c6">b</tspan>
+    <tspan x="301" fill="#c6c6c6">o</tspan>
+    <tspan x="310" fill="#c6c6c6">t</tspan>
+    <tspan x="328" fill="#c6c6c6">v</tspan>
+    <tspan x="337" fill="#c6c6c6">s</tspan>
+    <tspan x="355" fill="#c6c6c6">A</tspan>
+    <tspan x="364" fill="#c6c6c6">I</tspan>
   </text>
-  <text y="420" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="36" lengthAdjust="spacingAndGlyphs">    </tspan>
-    <tspan x="54" fill="#5cff5c" textLength="27" lengthAdjust="spacingAndGlyphs">[5]</tspan>
-    <tspan x="81" fill="#c6c6c6" textLength="9" lengthAdjust="spacingAndGlyphs"> </tspan>
-    <tspan x="90" fill="#8a8a8a" textLength="9" lengthAdjust="spacingAndGlyphs">&gt;</tspan>
-    <tspan x="99" fill="#c6c6c6" textLength="135" lengthAdjust="spacingAndGlyphs"> train the AI  </tspan>
-    <tspan x="234" fill="#8a8a8a" textLength="99" lengthAdjust="spacingAndGlyphs">(self-play)</tspan>
+  <text y="420" text-anchor="middle" xml:space="preserve">
+    <tspan x="58" fill="#5cff5c">[</tspan>
+    <tspan x="67" fill="#5cff5c">5</tspan>
+    <tspan x="76" fill="#5cff5c">]</tspan>
+    <tspan x="94" fill="#8a8a8a">&gt;</tspan>
+    <tspan x="112" fill="#c6c6c6">t</tspan>
+    <tspan x="121" fill="#c6c6c6">r</tspan>
+    <tspan x="130" fill="#c6c6c6">a</tspan>
+    <tspan x="139" fill="#c6c6c6">i</tspan>
+    <tspan x="148" fill="#c6c6c6">n</tspan>
+    <tspan x="166" fill="#c6c6c6">t</tspan>
+    <tspan x="175" fill="#c6c6c6">h</tspan>
+    <tspan x="184" fill="#c6c6c6">e</tspan>
+    <tspan x="202" fill="#c6c6c6">A</tspan>
+    <tspan x="211" fill="#c6c6c6">I</tspan>
+    <tspan x="238" fill="#8a8a8a">(</tspan>
+    <tspan x="247" fill="#8a8a8a">s</tspan>
+    <tspan x="256" fill="#8a8a8a">e</tspan>
+    <tspan x="265" fill="#8a8a8a">l</tspan>
+    <tspan x="274" fill="#8a8a8a">f</tspan>
+    <tspan x="283" fill="#8a8a8a">-</tspan>
+    <tspan x="292" fill="#8a8a8a">p</tspan>
+    <tspan x="301" fill="#8a8a8a">l</tspan>
+    <tspan x="310" fill="#8a8a8a">a</tspan>
+    <tspan x="319" fill="#8a8a8a">y</tspan>
+    <tspan x="328" fill="#8a8a8a">)</tspan>
   </text>
-  <text y="440" xml:space="preserve">
-    <tspan x="18" fill="#c6c6c6" textLength="36" lengthAdjust="spacingAndGlyphs">    </tspan>
-    <tspan x="54" fill="#ff5c5c" textLength="27" lengthAdjust="spacingAndGlyphs">[q]</tspan>
-    <tspan x="81" fill="#c6c6c6" textLength="9" lengthAdjust="spacingAndGlyphs"> </tspan>
-    <tspan x="90" fill="#8a8a8a" textLength="9" lengthAdjust="spacingAndGlyphs">&gt;</tspan>
-    <tspan x="99" fill="#c6c6c6" textLength="45" lengthAdjust="spacingAndGlyphs"> quit</tspan>
+  <text y="440" text-anchor="middle" xml:space="preserve">
+    <tspan x="58" fill="#ff5c5c">[</tspan>
+    <tspan x="67" fill="#ff5c5c">q</tspan>
+    <tspan x="76" fill="#ff5c5c">]</tspan>
+    <tspan x="94" fill="#8a8a8a">&gt;</tspan>
+    <tspan x="112" fill="#c6c6c6">q</tspan>
+    <tspan x="121" fill="#c6c6c6">u</tspan>
+    <tspan x="130" fill="#c6c6c6">i</tspan>
+    <tspan x="139" fill="#c6c6c6">t</tspan>
   </text>
-  <text y="460" xml:space="preserve">
+  <text y="460" text-anchor="middle" xml:space="preserve">
   </text>
-  <text y="480" xml:space="preserve">
-    <tspan x="18" fill="#8a8a8a" textLength="540" lengthAdjust="spacingAndGlyphs">  ──────────────────────────────────────────────────────────</tspan>
+  <text y="480" text-anchor="middle" xml:space="preserve">
+    <tspan x="40" fill="#8a8a8a">─</tspan>
+    <tspan x="49" fill="#8a8a8a">─</tspan>
+    <tspan x="58" fill="#8a8a8a">─</tspan>
+    <tspan x="67" fill="#8a8a8a">─</tspan>
+    <tspan x="76" fill="#8a8a8a">─</tspan>
+    <tspan x="85" fill="#8a8a8a">─</tspan>
+    <tspan x="94" fill="#8a8a8a">─</tspan>
+    <tspan x="103" fill="#8a8a8a">─</tspan>
+    <tspan x="112" fill="#8a8a8a">─</tspan>
+    <tspan x="121" fill="#8a8a8a">─</tspan>
+    <tspan x="130" fill="#8a8a8a">─</tspan>
+    <tspan x="139" fill="#8a8a8a">─</tspan>
+    <tspan x="148" fill="#8a8a8a">─</tspan>
+    <tspan x="157" fill="#8a8a8a">─</tspan>
+    <tspan x="166" fill="#8a8a8a">─</tspan>
+    <tspan x="175" fill="#8a8a8a">─</tspan>
+    <tspan x="184" fill="#8a8a8a">─</tspan>
+    <tspan x="193" fill="#8a8a8a">─</tspan>
+    <tspan x="202" fill="#8a8a8a">─</tspan>
+    <tspan x="211" fill="#8a8a8a">─</tspan>
+    <tspan x="220" fill="#8a8a8a">─</tspan>
+    <tspan x="229" fill="#8a8a8a">─</tspan>
+    <tspan x="238" fill="#8a8a8a">─</tspan>
+    <tspan x="247" fill="#8a8a8a">─</tspan>
+    <tspan x="256" fill="#8a8a8a">─</tspan>
+    <tspan x="265" fill="#8a8a8a">─</tspan>
+    <tspan x="274" fill="#8a8a8a">─</tspan>
+    <tspan x="283" fill="#8a8a8a">─</tspan>
+    <tspan x="292" fill="#8a8a8a">─</tspan>
+    <tspan x="301" fill="#8a8a8a">─</tspan>
+    <tspan x="310" fill="#8a8a8a">─</tspan>
+    <tspan x="319" fill="#8a8a8a">─</tspan>
+    <tspan x="328" fill="#8a8a8a">─</tspan>
+    <tspan x="337" fill="#8a8a8a">─</tspan>
+    <tspan x="346" fill="#8a8a8a">─</tspan>
+    <tspan x="355" fill="#8a8a8a">─</tspan>
+    <tspan x="364" fill="#8a8a8a">─</tspan>
+    <tspan x="373" fill="#8a8a8a">─</tspan>
+    <tspan x="382" fill="#8a8a8a">─</tspan>
+    <tspan x="391" fill="#8a8a8a">─</tspan>
+    <tspan x="400" fill="#8a8a8a">─</tspan>
+    <tspan x="409" fill="#8a8a8a">─</tspan>
+    <tspan x="418" fill="#8a8a8a">─</tspan>
+    <tspan x="427" fill="#8a8a8a">─</tspan>
+    <tspan x="436" fill="#8a8a8a">─</tspan>
+    <tspan x="445" fill="#8a8a8a">─</tspan>
+    <tspan x="454" fill="#8a8a8a">─</tspan>
+    <tspan x="463" fill="#8a8a8a">─</tspan>
+    <tspan x="472" fill="#8a8a8a">─</tspan>
+    <tspan x="481" fill="#8a8a8a">─</tspan>
+    <tspan x="490" fill="#8a8a8a">─</tspan>
+    <tspan x="499" fill="#8a8a8a">─</tspan>
+    <tspan x="508" fill="#8a8a8a">─</tspan>
+    <tspan x="517" fill="#8a8a8a">─</tspan>
+    <tspan x="526" fill="#8a8a8a">─</tspan>
+    <tspan x="535" fill="#8a8a8a">─</tspan>
+    <tspan x="544" fill="#8a8a8a">─</tspan>
+    <tspan x="553" fill="#8a8a8a">─</tspan>
   </text>
 </svg>

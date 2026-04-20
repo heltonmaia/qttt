@@ -153,19 +153,20 @@ def to_svg(lines, title="qttt"):
 
     y = CHROME_H + PAD + LINE_H - 6
     for ln in lines:
-        out.append(f'  <text y="{y}" xml:space="preserve">')
+        out.append(f'  <text y="{y}" text-anchor="middle" xml:space="preserve">')
         col = 0
         for fg, bold, s in ln:
             weight = ' font-weight="700"' if bold else ""
-            x = PAD + col * CHAR_W
-            # Anchor each run at an absolute x so misaligned glyph widths
-            # (bold vs regular, box-drawing chars) cannot drift the grid.
-            out.append(
-                f'    <tspan x="{x}" fill="{fg}"{weight}'
-                f' textLength="{len(s) * CHAR_W}" lengthAdjust="spacingAndGlyphs"'
-                f'>{_escape(s)}</tspan>'
-            )
-            col += len(s)
+            for ch in s:
+                # Anchor EACH character at the center of its grid cell.
+                # This guarantees the monospace grid even when glyph widths
+                # differ (bold vs regular, box-drawing vs Latin letters).
+                x = PAD + col * CHAR_W + CHAR_W // 2
+                if ch != " " and ch != "\u00a0":
+                    out.append(
+                        f'    <tspan x="{x}" fill="{fg}"{weight}>{_escape(ch)}</tspan>'
+                    )
+                col += 1
         out.append("  </text>")
         y += LINE_H
     out.append("</svg>")
