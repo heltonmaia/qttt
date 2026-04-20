@@ -4,6 +4,16 @@ A tabular Q-learning agent that learns Tic-Tac-Toe by playing millions of
 games against itself. No neural networks, no dependencies — just classical
 reinforcement learning you can read end-to-end in about 300 lines of Python.
 
+qttt ships in **two flavors** — the same game, same pre-trained model, same
+Python source:
+
+- a **terminal** version you run locally with `python main.py`, which also
+  lets you retrain the agent from scratch;
+- a **web** version that runs the exact same Python code in your browser via
+  [Pyodide](https://pyodide.org/), with no backend and nothing to install.
+
+Pick whichever is closer to hand — they share the same game loop.
+
 ---
 
 ## Play
@@ -11,8 +21,9 @@ reinforcement learning you can read end-to-end in about 300 lines of Python.
 ### In your browser
 **[Open the web version →](https://heltonmaia.github.io/qttt/web/)**
 
-Powered by [Pyodide](https://pyodide.org/) — the same Python code runs
-inside your browser. No backend, no installation.
+The Python code is shipped to your browser and run on a WebAssembly Python
+runtime (Pyodide). Training is disabled here because it would happen on your
+machine; play against the pre-trained model instead.
 
 ### In your terminal
 
@@ -22,7 +33,8 @@ cd qttt
 python main.py
 ```
 
-Requires Python 3.6+. No dependencies.
+Requires Python 3.6+. No dependencies. This is the only version that can
+retrain the agent (mode 5).
 
 ---
 
