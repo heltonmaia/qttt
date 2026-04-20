@@ -4,9 +4,6 @@ A tabular Q-learning agent that learns Tic-Tac-Toe by playing millions of
 games against itself. No neural networks, no dependencies — just classical
 reinforcement learning you can read end-to-end in about 300 lines of Python.
 
-> **About the name:** `qttt` = **Q** (as in *Q-learning*) + **ttt** (as in
-> *tic-tac-toe*).
-
 ---
 
 ## Play
