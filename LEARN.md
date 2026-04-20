@@ -13,22 +13,22 @@ that idea lives in this repo.
 
 ## Contents
 
-1. [Why tic-tac-toe?](#1-why-tic-tac-toe)
-2. [The reinforcement learning setup](#2-the-reinforcement-learning-setup)
-3. [States, actions, rewards](#3-states-actions-rewards)
-4. [Policies and value functions](#4-policies-and-value-functions)
-5. [The Q-function](#5-the-q-function)
-6. [The Bellman equation, intuitively](#6-the-bellman-equation-intuitively)
-7. [Q-learning, step by step](#7-q-learning-step-by-step)
-8. [Exploration vs. exploitation (ε-greedy)](#8-exploration-vs-exploitation-ε-greedy)
-9. [Self-play: two agents, one brain](#9-self-play-two-agents-one-brain)
-10. [Reading the training output](#10-reading-the-training-output)
-11. [What tabular methods cannot do](#11-what-tabular-methods-cannot-do)
-12. [Where to go next](#12-where-to-go-next)
+- [Why tic-tac-toe?](#why-tic-tac-toe)
+- [The reinforcement learning setup](#the-reinforcement-learning-setup)
+- [States, actions, rewards](#states-actions-rewards)
+- [Policies and value functions](#policies-and-value-functions)
+- [The Q-function](#the-q-function)
+- [The Bellman equation, intuitively](#the-bellman-equation-intuitively)
+- [Q-learning, step by step](#q-learning-step-by-step)
+- [Exploration vs. exploitation (ε-greedy)](#exploration-vs-exploitation-ε-greedy)
+- [Self-play: two agents, one brain](#self-play-two-agents-one-brain)
+- [Reading the training output](#reading-the-training-output)
+- [What tabular methods cannot do](#what-tabular-methods-cannot-do)
+- [Where to go next](#where-to-go-next)
 
 ---
 
-## 1. Why tic-tac-toe?
+## Why tic-tac-toe?
 
 Tic-tac-toe is the "hello world" of RL for three specific reasons:
 
@@ -54,7 +54,7 @@ way to chess, Go, and Atari games.
 
 ---
 
-## 2. The reinforcement learning setup
+## The reinforcement learning setup
 
 Reinforcement learning studies how an **agent** should act inside an
 **environment** to maximize a **reward** signal over time.
@@ -94,7 +94,7 @@ find out if a decision was good after playing it all the way to the end.
 
 ---
 
-## 3. States, actions, rewards
+## States, actions, rewards
 
 Let's make all three concrete for qttt.
 
@@ -151,7 +151,7 @@ called **sparse reward**, and it's one of the defining challenges of RL.
 
 ---
 
-## 4. Policies and value functions
+## Policies and value functions
 
 RL has three important quantities that build on each other:
 
@@ -196,7 +196,7 @@ name.
 
 ---
 
-## 5. The Q-function
+## The Q-function
 
 In the tabular setting, `Q` is literally a dictionary:
 
@@ -225,7 +225,7 @@ whole policy.
 
 ---
 
-## 6. The Bellman equation, intuitively
+## The Bellman equation, intuitively
 
 The central equation in RL is the **Bellman equation**. For the optimal
 action-value function `Q*`, it says:
@@ -263,7 +263,7 @@ winning, regardless of in how many moves.
 
 ---
 
-## 7. Q-learning, step by step
+## Q-learning, step by step
 
 We don't start out knowing `Q*`. We start with a completely empty
 (all-zero) Q-table, and we *update* it every time the agent plays a move
@@ -300,7 +300,7 @@ constant, which works fine in practice for a finite problem like this).
 
 ---
 
-## 8. Exploration vs. exploitation (ε-greedy)
+## Exploration vs. exploitation (ε-greedy)
 
 Here's the catch. The update rule only improves Q-values for states and
 actions the agent actually tries. If the agent always picks its current
@@ -337,7 +337,7 @@ explores 10% — enough to keep discovering rare states.
 
 ---
 
-## 9. Self-play: two agents, one brain
+## Self-play: two agents, one brain
 
 Tic-tac-toe is a two-player game. Who plays the opponent during training?
 
@@ -379,7 +379,7 @@ climbs toward 100% as training goes on.
 
 ---
 
-## 10. Reading the training output
+## Reading the training output
 
 When you run option 5, qttt prints progress every 1,000 episodes:
 
@@ -408,7 +408,7 @@ side can't counter, which is impossible in solved tic-tac-toe.
 
 ---
 
-## 11. What tabular methods cannot do
+## What tabular methods cannot do
 
 qttt works because tic-tac-toe has ~5,000 reachable states. We can store
 every one.
@@ -433,7 +433,7 @@ The only thing that changes is *how* we represent `Q`.
 
 ---
 
-## 12. Where to go next
+## Where to go next
 
 If you want to extend qttt:
 
