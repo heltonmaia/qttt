@@ -63,7 +63,6 @@ const pyodide = await loadPyodide({
 pyodide.setStdout({ batched: (s) => term.write(s.replace(/\n/g, '\r\n')) });
 pyodide.setStderr({ batched: (s) => term.write(s.replace(/\n/g, '\r\n')) });
 
-boot.textContent = 'fetching game files…';
 const sources = [
   'agent/qlearning.py',
   'game/board.py',
@@ -71,6 +70,7 @@ const sources = [
   'utils/style.py',
 ];
 for (const path of sources) {
+  boot.textContent = `fetching ${path}…`;
   const res = await fetch('../' + path);
   if (!res.ok) throw new Error(`failed to fetch ${path}: HTTP ${res.status}`);
   const text = await res.text();
@@ -79,15 +79,16 @@ for (const path of sources) {
   pyodide.FS.writeFile(path, text);
 }
 
+boot.textContent = 'fetching pre-trained model…';
 const mdl = await fetch('../models/qlearning_model.pkl');
 if (!mdl.ok) throw new Error(`failed to fetch model: HTTP ${mdl.status}`);
 pyodide.FS.mkdirTree('models');
 pyodide.FS.writeFile('models/qlearning_model.pkl', new Uint8Array(await mdl.arrayBuffer()));
 
+boot.textContent = 'fetching play.py…';
 const playSrc = await (await fetch('play.py')).text();
 
-boot.textContent = '';
-boot.style.display = 'none';
+boot.textContent = 'starting…';
 term.focus();
 
 await pyodide.runPythonAsync(`
@@ -96,8 +97,12 @@ os.environ['FORCE_COLOR'] = '1'
 `);
 
 try {
+  boot.textContent = '';
+  boot.style.display = 'none';
   await pyodide.runPythonAsync(playSrc);
 } catch (e) {
+  boot.style.display = '';
+  boot.textContent = `fatal: ${e.message}`;
   term.write(`\r\n\x1b[38;5;196mfatal: ${e.message}\x1b[0m\r\n`);
   console.error(e);
 }
