@@ -10,8 +10,10 @@ __pycache__/
 *.log
 
 # Training data / model artifacts
-models/
+models/*
+!models/qlearning_model.pkl
 *.pkl
+!models/qlearning_model.pkl
 
 # Temporary files
 *.swp
