@@ -1,103 +1,76 @@
-# qttt — Jogo da Velha com Q-Learning
+# qttt — Q-Learning Tic-Tac-Toe
 
-Um projeto de **Jogo da Velha** em Python com uma **Inteligência Artificial** baseada em Q-Learning. A IA é capaz de aprender jogando contra si mesma e enfrentar humanos.
+A Python Tic-Tac-Toe with a **reinforcement-learning** agent. The AI learns by
+playing against itself (self-play) and can then face humans, a random bot, or
+another AI in spectate mode.
 
-> **Sobre o nome:** `qttt` = **Q** (de *Q-learning*) + **ttt** (de *tic-tac-toe*). Curto, pronunciável ("Q-triple-T") e fiel ao que o projeto faz: um agente de Q-learning tabular jogando a velha.
+> **About the name:** `qttt` = **Q** (as in *Q-learning*) + **ttt** (as in
+> *tic-tac-toe*). Short, pronounceable ("Q-triple-T") and faithful to what the
+> project actually does: a tabular Q-learning agent playing tic-tac-toe.
 
 ---
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
-jogo_da_velha_ia/
-├── main.py                    # Ponto de entrada do jogo
-├── agente/
-│   └── qlearning.py           # Implementação do agente Q-Learning
-├── jogo/
-│   ├── tabuleiro.py           # Exibição e controle visual do tabuleiro
-│   └── motor.py               # Lógica principal do jogo
-├── modelos/
-│   └── qlearning_model.pkl    # Modelo treinado (gerado após treino)
+qttt/
+├── main.py                    # Entry point
+├── agent/
+│   └── qlearning.py           # Tabular Q-Learning agent
+├── game/
+│   ├── board.py               # Board state + terminal rendering
+│   └── engine.py               # Game engine / control flow
+├── models/
+│   └── qlearning_model.pkl    # Trained Q-table (generated after training)
 ├── utils/
-│   └── limpar_tela.py         # Função para limpar terminal
-└── README.md                  # Este arquivo
+│   ├── clear_screen.py        # Cross-platform screen clear
+│   └── style.py               # ANSI color helpers
+├── about_AI.md                # Q-learning math + agent hyperparameters
+└── README.md                  # This file
 ```
 
 ---
 
-## Como Executar
-
-1. Clone o repositório:
+## Running
 
 ```bash
 git clone https://github.com/heltonmaia/qttt.git
 cd qttt
-```
-
-2. Execute o jogo:
-
-```bash
 python main.py
 ```
 
 ---
 
-## Modos de Jogo Disponíveis
+## Game Modes
 
-* `1` Dois jogadores humanos
-* `2` Humano vs Computador Aleatório
-* `3` Humano vs IA (Q-Learning)
-* `4` Modo Assistir: Computador vs IA
-* `5` Treinar a IA
-
----
-
-## Sobre a Inteligência Artificial
-
-O agente usa **Q-Learning**, um algoritmo de aprendizado por reforço:
-
-* Armazena os estados do jogo e recompensas em uma **Q-table**
-* Aprende por tentativa e erro jogando contra si mesmo
-* Após o treinamento, o modelo é salvo em `modelos/qlearning_model.pkl`
+* `1` human vs human
+* `2` human vs random bot
+* `3` human vs trained AI
+* `4` spectate: random bot vs trained AI
+* `5` train the AI (self-play)
 
 ---
 
-## Requisitos
+## About the AI
 
-* Python 3.6 ou superior
-* Nenhuma dependência externa (apenas bibliotecas padrão)
+The agent uses **Q-Learning**, a model-free reinforcement learning algorithm:
 
----
+* Stores state-action values in a **Q-table** (plain dict, pickled to disk)
+* Learns by trial and error, playing against itself
+* Uses **ε-greedy** exploration with decay
+* After training, the model is saved to `models/qlearning_model.pkl`
 
-## Exemplo da Interface
-
-```
-╔══════════════════════════════════════════════════════╗
-║                  JOGO DA VELHA COM IA                ║
-╚══════════════════════════════════════════════════════╝
-
-Humano (X) vs IA Treinada (O)
-
-    0   1   2
-  +---+---+---+
-0 |   |   |   |
-  +---+---+---+
-1 |   |   |   |
-  +---+---+---+
-2 |   |   |   |
-  +---+---+---+
-
-Digite: linha coluna (ex: 1 2) ou 'q' para sair
-```
+See `about_AI.md` for the math and hyperparameters.
 
 ---
 
-## Contribuições
+## Requirements
 
-Contribuições são bem-vindas. Abra uma *Issue* ou envie um *Pull Request*.
+* Python 3.6+
+* No external dependencies (standard library only)
 
 ---
 
-## Licença
+## License
 
-Distribuído sob a licença MIT. Veja `LICENSE` para mais detalhes.
+Distributed under the MIT License. See `LICENSE` for details.

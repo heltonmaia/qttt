@@ -1,92 +1,93 @@
+# Understanding Q-Learning in qttt
 
-# 🧠 Entendendo o Q-Learning no Jogo da Velha
-
-Este documento explica a lógica matemática e prática por trás da IA usada neste projeto de Jogo da Velha com Q-Learning.
-
----
-
-## 🤖 O que é Q-Learning?
-
-**Q-Learning** é um algoritmo de aprendizado por reforço que permite a um agente aprender uma política ótima de ações com base em tentativas, erros e recompensas.
+This document explains the math and practical logic behind the AI used in this
+Q-Learning Tic-Tac-Toe project.
 
 ---
 
-## 🧮 A Equação de Atualização
+## What is Q-Learning?
 
-A fórmula usada para atualizar os valores Q é:
+**Q-Learning** is a reinforcement learning algorithm that lets an agent learn
+an optimal action policy through trial, error, and rewards — no model of the
+environment required.
+
+---
+
+## The Update Equation
+
+The formula used to update Q-values is:
 
 ```
 Q(s, a) ← Q(s, a) + α * [ r + γ * max(Q(s', a')) - Q(s, a) ]
 ```
 
-Onde:
+Where:
 
-- `s` → estado atual
-- `a` → ação executada
-- `r` → recompensa recebida após ação
-- `s'` → próximo estado
-- `α` (alpha) → taxa de aprendizado
-- `γ` (gamma) → fator de desconto do futuro
-- `max Q(s', a')` → melhor valor estimado da próxima jogada
-
----
-
-## 🧠 Como isso é aplicado no jogo
-
-### Estados (`s`)
-São representações do tabuleiro, como uma string `'XOX O X O'`.
-
-### Ações (`a`)
-São coordenadas disponíveis no tabuleiro, como `(0, 2)`.
-
-### Recompensas (`r`)
-- Vitória: `+1`
-- Derrota: `-1`
-- Empate: `0`
+- `s` → current state
+- `a` → action taken
+- `r` → reward received after the action
+- `s'` → next state
+- `α` (alpha) → learning rate
+- `γ` (gamma) → discount factor for future rewards
+- `max Q(s', a')` → best estimated value for the next move
 
 ---
 
-## 🎲 Exploração vs Exploração
+## How it maps to the game
 
-A IA usa **ε-greedy** para decidir entre:
+### States (`s`)
+Board representations as a string, e.g. `'XOX O X O'`.
 
-- **Explorar** jogadas novas: com probabilidade `ε`
-- **Explorar** jogadas aprendidas: com probabilidade `1 - ε`
+### Actions (`a`)
+Coordinates of an empty cell, e.g. `(0, 2)`.
 
-O valor de `ε` decai com o tempo:
+### Rewards (`r`)
+- Win: `+1`
+- Loss: `-1`
+- Draw: `0`
+
+---
+
+## Exploration vs Exploitation
+
+The agent uses **ε-greedy**:
+
+- **Explore** new moves with probability `ε`
+- **Exploit** learned moves with probability `1 - ε`
+
+`ε` decays over time:
 
 ```python
-epsilon *= epsilon_decay  # até atingir epsilon_min
+epsilon *= epsilon_decay  # until epsilon_min
 ```
 
 ---
 
-## 📊 Parâmetros do agente
+## Agent hyperparameters
 
 ```python
-alpha = 0.1        # aprendizado
-gamma = 0.9        # desconto
-epsilon = 0.9      # exploração inicial
+alpha = 0.1          # learning rate
+gamma = 0.9          # discount factor
+epsilon = 0.9        # initial exploration rate
 epsilon_decay = 0.995
 epsilon_min = 0.1
 ```
 
 ---
 
-## 📚 Vantagens no Jogo da Velha
+## Why Q-Learning fits Tic-Tac-Toe
 
-- Espaço de estados pequeno (~5 mil)
-- IA pode treinar jogando contra si mesma
-- Aprendizado rápido e sem supervisão
-
----
-
-## ✅ Resultado
-
-Após o treinamento, a IA aprende a jogar de forma competitiva contra humanos ou aleatórios e o modelo é salvo em:
-
-```
-modelos/qlearning_model.pkl
-```
+- Small state space (~5k reachable states)
+- Agent can train by playing against itself
+- Fast, unsupervised learning
 
 ---
+
+## Result
+
+After training, the AI plays competitively against humans and random bots.
+The model is saved to:
+
+```
+models/qlearning_model.pkl
+```

@@ -1,13 +1,11 @@
-"""
-Ponto de entrada principal do Jogo da Velha com IA
-"""
+"""Entry point for qttt — Q-learning Tic-Tac-Toe."""
 
-from jogo.motor import JogoDaVelha
+from game.engine import TicTacToe
+
 
 def main():
-    """Função principal do programa"""
-    jogo = JogoDaVelha()
-    jogo.jogar()
+    TicTacToe().run()
+
 
 if __name__ == "__main__":
     main()
