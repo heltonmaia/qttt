@@ -1,16 +1,15 @@
-# 🎮 qttt — Jogo da Velha com Q-Learning
+# qttt — Jogo da Velha com Q-Learning
 
-Um projeto de **Jogo da Velha** em Python com uma **Inteligência Artificial** baseada em Q-Learning. A IA é capaz de aprender jogando contra si mesma e enfrentar humanos!
+Um projeto de **Jogo da Velha** em Python com uma **Inteligência Artificial** baseada em Q-Learning. A IA é capaz de aprender jogando contra si mesma e enfrentar humanos.
 
 > **Sobre o nome:** `qttt` = **Q** (de *Q-learning*) + **ttt** (de *tic-tac-toe*). Curto, pronunciável ("Q-triple-T") e fiel ao que o projeto faz: um agente de Q-learning tabular jogando a velha.
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
-
-jogo\_da\_velha\_ia/
+jogo_da_velha_ia/
 ├── main.py                    # Ponto de entrada do jogo
 ├── agente/
 │   └── qlearning.py           # Implementação do agente Q-Learning
@@ -18,23 +17,22 @@ jogo\_da\_velha\_ia/
 │   ├── tabuleiro.py           # Exibição e controle visual do tabuleiro
 │   └── motor.py               # Lógica principal do jogo
 ├── modelos/
-│   └── qlearning\_model.pkl    # Modelo treinado (gerado após treino)
+│   └── qlearning_model.pkl    # Modelo treinado (gerado após treino)
 ├── utils/
-│   └── limpar\_tela.py         # Função para limpar terminal
+│   └── limpar_tela.py         # Função para limpar terminal
 └── README.md                  # Este arquivo
-
-````
+```
 
 ---
 
-## 🚀 Como Executar
+## Como Executar
 
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/jogo-da-velha-ia.git
-cd jogo-da-velha-ia
-````
+git clone https://github.com/heltonmaia/qttt.git
+cd qttt
+```
 
 2. Execute o jogo:
 
@@ -44,17 +42,17 @@ python main.py
 
 ---
 
-## 🕹️ Modos de Jogo Disponíveis
+## Modos de Jogo Disponíveis
 
-* `1️⃣` Dois jogadores humanos
-* `2️⃣` Humano vs Computador Aleatório
-* `3️⃣` Humano vs IA (Q-Learning)
-* `4️⃣` Modo Assistir: Computador vs IA
-* `5️⃣` Treinar a IA
+* `1` Dois jogadores humanos
+* `2` Humano vs Computador Aleatório
+* `3` Humano vs IA (Q-Learning)
+* `4` Modo Assistir: Computador vs IA
+* `5` Treinar a IA
 
 ---
 
-## 🧠 Sobre a Inteligência Artificial
+## Sobre a Inteligência Artificial
 
 O agente usa **Q-Learning**, um algoritmo de aprendizado por reforço:
 
@@ -64,21 +62,21 @@ O agente usa **Q-Learning**, um algoritmo de aprendizado por reforço:
 
 ---
 
-## 📦 Requisitos
+## Requisitos
 
 * Python 3.6 ou superior
 * Nenhuma dependência externa (apenas bibliotecas padrão)
 
 ---
 
-## 📸 Exemplo da Interface
+## Exemplo da Interface
 
 ```
 ╔══════════════════════════════════════════════════════╗
-║                🎮 JOGO DA VELHA COM IA 🤖            ║
+║                  JOGO DA VELHA COM IA                ║
 ╚══════════════════════════════════════════════════════╝
 
-👤 Humano (X) vs 🤖 IA Treinada (O)
+Humano (X) vs IA Treinada (O)
 
     0   1   2
   +---+---+---+
@@ -89,19 +87,17 @@ O agente usa **Q-Learning**, um algoritmo de aprendizado por reforço:
 2 |   |   |   |
   +---+---+---+
 
-📝 Digite: linha coluna (ex: 1 2) ou 'q' para sair
+Digite: linha coluna (ex: 1 2) ou 'q' para sair
 ```
 
 ---
 
-## 🧑‍💻 Contribuições
+## Contribuições
 
-Contribuições são bem-vindas! Abra uma *Issue* ou envie um *Pull Request*.
+Contribuições são bem-vindas. Abra uma *Issue* ou envie um *Pull Request*.
 
 ---
 
-## 📄 Licença
+## Licença
 
 Distribuído sob a licença MIT. Veja `LICENSE` para mais detalhes.
-
----
