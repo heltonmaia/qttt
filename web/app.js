@@ -90,8 +90,9 @@ try {
     indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.1/full/',
   });
 
-  pyodide.setStdout({ batched: (s) => term.write(s.replace(/\n/g, '\r\n')) });
-  pyodide.setStderr({ batched: (s) => term.write(s.replace(/\n/g, '\r\n')) });
+  const writeOut = (s) => term.write(s.replace(/\r?\n/g, '\r\n') + '\r\n');
+  pyodide.setStdout({ batched: writeOut });
+  pyodide.setStderr({ batched: writeOut });
 
   const ROOT = '/home/pyodide';
   try { pyodide.FS.mkdirTree(ROOT); } catch (_) { /* already exists */ }
