@@ -45,6 +45,20 @@ fit.fit();
 window.addEventListener('resize', () => fit.fit());
 
 let buffer = '';
+const readyLines = [];
+const waitingResolvers = [];
+
+const deliverLine = (line) => {
+  const r = waitingResolvers.shift();
+  if (r) r(line);
+  else readyLines.push(line);
+};
+
+window.__qttt_request_line = () =>
+  new Promise((resolve) => {
+    if (readyLines.length > 0) resolve(readyLines.shift());
+    else waitingResolvers.push(resolve);
+  });
 
 term.onData((data) => {
   for (const ch of data) {
@@ -53,7 +67,7 @@ term.onData((data) => {
       const line = buffer;
       buffer = '';
       term.write('\r\n');
-      if (window.__qttt_submit_line) window.__qttt_submit_line(line);
+      deliverLine(line);
     } else if (code === 127 || code === 8) {
       if (buffer.length) {
         buffer = buffer.slice(0, -1);
