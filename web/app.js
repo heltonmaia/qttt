@@ -95,9 +95,14 @@ try {
     indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.1/full/',
   });
 
-  const writeOut = (s) => term.write(s.replace(/\r?\n/g, '\r\n') + '\r\n');
-  pyodide.setStdout({ batched: writeOut });
-  pyodide.setStderr({ batched: writeOut });
+  const decoder = new TextDecoder('utf-8');
+  const writeOut = (bytes) => {
+    const s = decoder.decode(bytes, { stream: true }).replace(/\n/g, '\r\n');
+    term.write(s);
+    return bytes.length;
+  };
+  pyodide.setStdout({ write: writeOut, isatty: true });
+  pyodide.setStderr({ write: writeOut, isatty: true });
 
   const ROOT = '/home/pyodide';
   try { pyodide.FS.mkdirTree(ROOT); } catch (_) { /* already exists */ }
