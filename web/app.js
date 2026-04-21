@@ -45,7 +45,6 @@ fit.fit();
 window.addEventListener('resize', () => fit.fit());
 
 let buffer = '';
-let resolver = null;
 
 term.onData((data) => {
   for (const ch of data) {
@@ -54,11 +53,7 @@ term.onData((data) => {
       const line = buffer;
       buffer = '';
       term.write('\r\n');
-      if (resolver) {
-        const r = resolver;
-        resolver = null;
-        r(line);
-      }
+      if (window.__qttt_submit_line) window.__qttt_submit_line(line);
     } else if (code === 127 || code === 8) {
       if (buffer.length) {
         buffer = buffer.slice(0, -1);
@@ -70,11 +65,6 @@ term.onData((data) => {
     }
   }
 });
-
-window.__qttt_read_line = () =>
-  new Promise((resolve) => {
-    resolver = resolve;
-  });
 
 const bust = `?cb=${Date.now()}`;
 const grab = async (url, asBytes = false) => {

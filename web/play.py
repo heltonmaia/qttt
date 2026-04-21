@@ -22,6 +22,19 @@ import game.board as board_mod
 # terminal-version's `os.system("clear")` with a no-dependency print.
 board_mod.clear_screen = lambda: print("\x1b[2J\x1b[H", end="", flush=True)
 
+_pending_line: "asyncio.Future[str] | None" = None
+
+
+def _submit_line(line: str) -> None:
+    global _pending_line
+    fut = _pending_line
+    _pending_line = None
+    if fut is not None and not fut.done():
+        fut.set_result(str(line))
+
+
+js.window.__qttt_submit_line = _submit_line
+
 MODEL_PATH = "models/qlearning_model.pkl"
 MODE_KEY = {"1": "pvp", "2": "random", "3": "ai", "4": "watch"}
 
@@ -34,10 +47,12 @@ GREETINGS = {
 
 
 async def ainput(prompt: str = "") -> str:
+    global _pending_line
     if prompt:
         print(prompt, end="", flush=True)
-    result = await js.window.__qttt_read_line()
-    return str(result)
+    loop = asyncio.get_event_loop()
+    _pending_line = loop.create_future()
+    return await _pending_line
 
 
 def check_winner(grid):
