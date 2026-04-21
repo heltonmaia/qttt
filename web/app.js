@@ -4,19 +4,24 @@ import { FitAddon } from 'https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/+
 const boot = document.getElementById('boot');
 const termEl = document.getElementById('term');
 
-const fail = (msg, e) => {
+const describe = (e) => {
+  if (e == null) return 'null';
+  if (typeof e === 'string') return e;
+  if (e.message) return e.message;
+  if (e.name) return e.name;
+  try { return JSON.stringify(e); } catch { /* ignore */ }
+  try { return String(e); } catch { return '(unknown)'; }
+};
+
+const fail = (prefix, e) => {
   boot.style.display = '';
   boot.style.color = '#ff6b6b';
-  boot.textContent = msg;
+  boot.textContent = `${prefix}: ${describe(e)}`;
   if (e) console.error(e);
 };
 
-window.addEventListener('unhandledrejection', (ev) => {
-  fail(`error: ${ev.reason && ev.reason.message || ev.reason}`, ev.reason);
-});
-window.addEventListener('error', (ev) => {
-  fail(`error: ${ev.message}`, ev.error);
-});
+window.addEventListener('unhandledrejection', (ev) => fail('rejection', ev.reason));
+window.addEventListener('error', (ev) => fail('error', ev.error || ev.message));
 
 const term = new Terminal({
   cursorBlink: true,
@@ -118,6 +123,6 @@ os.environ['FORCE_COLOR'] = '1'
   boot.style.display = 'none';
   await pyodide.runPythonAsync(playSrc);
 } catch (e) {
-  fail(`fatal: ${e.message}`, e);
-  term.write(`\r\n\x1b[38;5;196m${e.message}\x1b[0m\r\n`);
+  fail('fatal', e);
+  term.write(`\r\n\x1b[38;5;196m${describe(e)}\x1b[0m\r\n`);
 }
