@@ -7,8 +7,12 @@ const termEl = document.getElementById('term');
 const describe = (e) => {
   if (e == null) return 'null';
   if (typeof e === 'string') return e;
-  if (e.message) return e.message;
-  if (e.name) return e.name;
+  const bits = [];
+  if (e.name) bits.push(e.name);
+  if (e.message) bits.push(e.message);
+  if (e.errno !== undefined) bits.push(`errno=${e.errno}`);
+  if (e.stack) bits.push(String(e.stack).split('\n').slice(0, 3).join(' | '));
+  if (bits.length) return bits.join(' · ');
   try { return JSON.stringify(e); } catch { /* ignore */ }
   try { return String(e); } catch { return '(unknown)'; }
 };
@@ -89,7 +93,21 @@ try {
   pyodide.setStdout({ batched: (s) => term.write(s.replace(/\n/g, '\r\n')) });
   pyodide.setStderr({ batched: (s) => term.write(s.replace(/\n/g, '\r\n')) });
 
+  const ROOT = '/home/pyodide';
+  try { pyodide.FS.mkdirTree(ROOT); } catch (_) { /* already exists */ }
+  try { pyodide.FS.chdir(ROOT); } catch (_) { /* fallback to root */ }
+
+  const writeAt = (path, data) => {
+    const full = `${ROOT}/${path}`;
+    const dir = full.slice(0, full.lastIndexOf('/'));
+    try { pyodide.FS.mkdirTree(dir); } catch (_) { /* already exists */ }
+    pyodide.FS.writeFile(full, data);
+  };
+
   const sources = [
+    'agent/__init__.py',
+    'game/__init__.py',
+    'utils/__init__.py',
     'agent/qlearning.py',
     'game/board.py',
     'utils/clear_screen.py',
@@ -97,16 +115,17 @@ try {
   ];
   for (const path of sources) {
     boot.textContent = `fetching ${path}…`;
+    if (path.endsWith('__init__.py')) {
+      writeAt(path, '');
+      continue;
+    }
     const text = await grab('../' + path);
-    const dir = path.slice(0, path.lastIndexOf('/'));
-    if (dir) pyodide.FS.mkdirTree(dir);
-    pyodide.FS.writeFile(path, text);
+    writeAt(path, text);
   }
 
   boot.textContent = 'fetching pre-trained model…';
   const modelBytes = await grab('../models/qlearning_model.pkl', true);
-  pyodide.FS.mkdirTree('models');
-  pyodide.FS.writeFile('models/qlearning_model.pkl', modelBytes);
+  writeAt('models/qlearning_model.pkl', modelBytes);
 
   boot.textContent = 'fetching play.py…';
   const playSrc = await grab('play.py');
@@ -115,8 +134,11 @@ try {
   term.focus();
 
   await pyodide.runPythonAsync(`
-import os
+import os, sys
 os.environ['FORCE_COLOR'] = '1'
+if '${ROOT}' not in sys.path:
+    sys.path.insert(0, '${ROOT}')
+os.chdir('${ROOT}')
 `);
 
   boot.textContent = '';
