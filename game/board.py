@@ -95,7 +95,8 @@ class Board:
 
         if message:
             print(f"  {message}")
-            print()
+            _sep()
+            return
 
         if mode in ("random", "ai") and current_player == "O":
             who = "trained AI" if mode == "ai" else "random bot"
