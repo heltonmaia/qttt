@@ -45,19 +45,14 @@ fit.fit();
 window.addEventListener('resize', () => fit.fit());
 
 let buffer = '';
-const readyLines = [];
-const waitingResolvers = [];
-
-const deliverLine = (line) => {
-  const r = waitingResolvers.shift();
-  if (r) r(line);
-  else readyLines.push(line);
-};
+let waiter = null;
 
 window.__qttt_request_line = () =>
   new Promise((resolve) => {
-    if (readyLines.length > 0) resolve(readyLines.shift());
-    else waitingResolvers.push(resolve);
+    // Drop anything that was in the buffer before python asked for input —
+    // stray keystrokes during auto-play shouldn't be consumed as a reply.
+    buffer = '';
+    waiter = resolve;
   });
 
 term.onData((data) => {
@@ -67,15 +62,21 @@ term.onData((data) => {
       const line = buffer;
       buffer = '';
       term.write('\r\n');
-      deliverLine(line);
+      if (waiter) {
+        const r = waiter;
+        waiter = null;
+        r(line);
+      }
     } else if (code === 127 || code === 8) {
-      if (buffer.length) {
+      if (waiter && buffer.length) {
         buffer = buffer.slice(0, -1);
         term.write('\b \b');
       }
     } else if (code >= 32 && code < 127) {
-      buffer += ch;
-      term.write(ch);
+      if (waiter) {
+        buffer += ch;
+        term.write(ch);
+      }
     }
   }
 });
