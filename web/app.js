@@ -4,6 +4,20 @@ import { FitAddon } from 'https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/+
 const boot = document.getElementById('boot');
 const termEl = document.getElementById('term');
 
+const fail = (msg, e) => {
+  boot.style.display = '';
+  boot.style.color = '#ff6b6b';
+  boot.textContent = msg;
+  if (e) console.error(e);
+};
+
+window.addEventListener('unhandledrejection', (ev) => {
+  fail(`error: ${ev.reason && ev.reason.message || ev.reason}`, ev.reason);
+});
+window.addEventListener('error', (ev) => {
+  fail(`error: ${ev.message}`, ev.error);
+});
+
 const term = new Terminal({
   cursorBlink: true,
   fontFamily: 'ui-monospace, Menlo, Consolas, monospace',
@@ -21,7 +35,6 @@ term.open(termEl);
 fit.fit();
 window.addEventListener('resize', () => fit.fit());
 
-// Line-buffered input: accumulate chars until Enter, echo as we go.
 let buffer = '';
 let resolver = null;
 
@@ -54,55 +67,57 @@ window.__qttt_read_line = () =>
     resolver = resolve;
   });
 
-boot.textContent = 'loading pyodide (~6 MB, first visit only)…';
-const { loadPyodide } = await import('https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.mjs');
-const pyodide = await loadPyodide({
-  indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.1/full/',
-});
+const bust = `?cb=${Date.now()}`;
+const grab = async (url, asBytes = false) => {
+  const res = await fetch(url + bust, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`failed to fetch ${url}: HTTP ${res.status}`);
+  return asBytes ? new Uint8Array(await res.arrayBuffer()) : await res.text();
+};
 
-pyodide.setStdout({ batched: (s) => term.write(s.replace(/\n/g, '\r\n')) });
-pyodide.setStderr({ batched: (s) => term.write(s.replace(/\n/g, '\r\n')) });
+try {
+  boot.textContent = 'loading pyodide (~6 MB, first visit only)…';
+  const { loadPyodide } = await import('https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.mjs');
+  const pyodide = await loadPyodide({
+    indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.1/full/',
+  });
 
-const sources = [
-  'agent/qlearning.py',
-  'game/board.py',
-  'utils/clear_screen.py',
-  'utils/style.py',
-];
-for (const path of sources) {
-  boot.textContent = `fetching ${path}…`;
-  const res = await fetch('../' + path);
-  if (!res.ok) throw new Error(`failed to fetch ${path}: HTTP ${res.status}`);
-  const text = await res.text();
-  const dir = path.slice(0, path.lastIndexOf('/'));
-  if (dir) pyodide.FS.mkdirTree(dir);
-  pyodide.FS.writeFile(path, text);
-}
+  pyodide.setStdout({ batched: (s) => term.write(s.replace(/\n/g, '\r\n')) });
+  pyodide.setStderr({ batched: (s) => term.write(s.replace(/\n/g, '\r\n')) });
 
-boot.textContent = 'fetching pre-trained model…';
-const mdl = await fetch('../models/qlearning_model.pkl');
-if (!mdl.ok) throw new Error(`failed to fetch model: HTTP ${mdl.status}`);
-pyodide.FS.mkdirTree('models');
-pyodide.FS.writeFile('models/qlearning_model.pkl', new Uint8Array(await mdl.arrayBuffer()));
+  const sources = [
+    'agent/qlearning.py',
+    'game/board.py',
+    'utils/clear_screen.py',
+    'utils/style.py',
+  ];
+  for (const path of sources) {
+    boot.textContent = `fetching ${path}…`;
+    const text = await grab('../' + path);
+    const dir = path.slice(0, path.lastIndexOf('/'));
+    if (dir) pyodide.FS.mkdirTree(dir);
+    pyodide.FS.writeFile(path, text);
+  }
 
-boot.textContent = 'fetching play.py…';
-const playSrc = await (await fetch('play.py')).text();
+  boot.textContent = 'fetching pre-trained model…';
+  const modelBytes = await grab('../models/qlearning_model.pkl', true);
+  pyodide.FS.mkdirTree('models');
+  pyodide.FS.writeFile('models/qlearning_model.pkl', modelBytes);
 
-boot.textContent = 'starting…';
-term.focus();
+  boot.textContent = 'fetching play.py…';
+  const playSrc = await grab('play.py');
 
-await pyodide.runPythonAsync(`
+  boot.textContent = 'starting…';
+  term.focus();
+
+  await pyodide.runPythonAsync(`
 import os
 os.environ['FORCE_COLOR'] = '1'
 `);
 
-try {
   boot.textContent = '';
   boot.style.display = 'none';
   await pyodide.runPythonAsync(playSrc);
 } catch (e) {
-  boot.style.display = '';
-  boot.textContent = `fatal: ${e.message}`;
-  term.write(`\r\n\x1b[38;5;196mfatal: ${e.message}\x1b[0m\r\n`);
-  console.error(e);
+  fail(`fatal: ${e.message}`, e);
+  term.write(`\r\n\x1b[38;5;196m${e.message}\x1b[0m\r\n`);
 }
